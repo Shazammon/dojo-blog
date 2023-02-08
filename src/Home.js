@@ -9,15 +9,26 @@ export default function Home() {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ])
 
+    const [ name, setName ] = useState('mario')
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id)
         setBlogs(newBlogs)
     }
 
     useEffect(() => {
-        console.log('use effect ran')
-        console.log(blogs)
-    });
+        fetch('http://localhost:8000/blogs')
+            .then(res => {
+                return res.json()
+            })
+            .then((data) => {
+                console.log(data)
+            })
+        // console.log('use effect ran')
+        // console.log(blogs)
+        // console.log(name)
+
+    }, []);
 
     // let name = 'mario'
     // const [ name, setName ] = useState('mario')
@@ -36,6 +47,8 @@ export default function Home() {
     return (
         <div className="home">
             <Bloglist blogs={blogs} title='All Blogs' handleDelete={handleDelete} />
+            <button onClick={() => setName('luigi')}>Change name</button>
+            <p>{name}</p>
             {/* <Bloglist blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/> */}
             {/* <h2>Home Page</h2>
             <p> { name } is { age } years old</p>
