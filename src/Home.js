@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Bloglist from './Bloglist'
+import useFetch from './useFetch';
 
 export default function Home() {
 
@@ -16,34 +17,7 @@ export default function Home() {
     //     setBlogs(newBlogs)
     // }
 
-    useEffect(() => {
-        setTimeout(() => {
-            fetch('http://localhost:8000/blogs')
-                .then(res => {
-                    console.log(res)
-                    if (!res.ok) {
-                        throw Error('could not fetch the data for that resource')
-                    }
-                    return res.json()
-                })
-                .then((data) => {
-                    console.log(data)
-                    setBlogs(data)
-                    setIsPending(false)
-                    setError(null)
-                })
-                .catch(err => {
-                    setIsPending(false)
-                    console.log(err.message)
-                    setError(err.message)
-                })
 
-        }, 500)
-        // console.log('use effect ran')
-        // console.log(blogs)
-        // console.log(name)
-
-    }, []);
 
     // let name = 'mario'
     // const [ name, setName ] = useState('mario')
