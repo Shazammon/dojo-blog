@@ -5,13 +5,33 @@ export default function Create() {
     const [ title, setTitle] = useState('');
     const [ body, setBody] = useState('');
     const [ author, setAuthor] = useState('mario');
+    const [ isPending, setIsPending ] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const newBlog = { title, body, author }
+
+        // console.log(newBlog)
+        // fetch method
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newBlog)
+        }).then(() => {
+            console.log('new blog posted')
+        }
+        )
+
+    }
 
 
     return (
         <div className="create">
             <h2>Add a New Blog</h2>
 
-            <form>
+            <form
+                onSubmit={handleSubmit}
+            >
                 <label>Blog Title:</label>
                 <input 
                     type='text'
