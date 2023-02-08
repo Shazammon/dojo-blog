@@ -11,7 +11,7 @@ export default function Home() {
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id)
-        setBlogs([newBlogs])
+        setBlogs(newBlogs)
     }
 
     // let name = 'mario'
