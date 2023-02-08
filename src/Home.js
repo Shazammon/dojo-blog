@@ -16,6 +16,7 @@ export default function Home() {
 
     useEffect(() => {
         console.log('use effect ran')
+        console.log(blogs)
     });
 
     // let name = 'mario'
