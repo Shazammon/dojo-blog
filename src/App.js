@@ -4,6 +4,7 @@ function App() {
   const title = 'Welcome to the New Blog';
   const likes = 50;
   // const person = { name: 'yoshi', age: 30 };
+  const link = "http://google.com"
 
   return (
     <div className="App">
@@ -11,6 +12,10 @@ function App() {
         <h1>{ title }</h1>
         <p> Liked { likes } times </p>
         {/* <p> {person} </p> */}
+        <p> { [1,2,3,4,5] } </p>
+        <p>{ Math.random() *10 }</p>
+
+        <a href={ link }>Google Site</a>
       </div>
     </div>
   );
