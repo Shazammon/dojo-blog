@@ -2,10 +2,10 @@ import Navbar from './Navbar';
 import Home from './Home'
 
 function App() {
-  const title = 'Welcome to the New Blog';
-  const likes = 50;
+  // const title = 'Welcome to the New Blog';
+  // const likes = 50;
   // const person = { name: 'yoshi', age: 30 };
-  const link = "http://google.com"
+  // const link = "http://google.com"
 
   return (
     <div className="App">
