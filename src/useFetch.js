@@ -35,8 +35,8 @@ const useFetch = (url) => {
         // console.log('use effect ran')
         // console.log(blogs)
         // console.log(name)
-
-    }, []);
+        return () => console.log('cleanup')
+    }, [url]);
 
     return { data, isPending, error }
 }
