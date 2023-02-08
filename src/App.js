@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home'
+import Bloglist from './Bloglist'
 
 function App() {
   // const title = 'Welcome to the New Blog';
