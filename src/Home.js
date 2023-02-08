@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 import Bloglist from './Bloglist'
 
 export default function Home() {
@@ -10,7 +10,8 @@ export default function Home() {
     ])
 
     const handleDelete = (id) => {
-        setBlogs([...prevBlogs])
+        const newBlogs = blogs.filter(blog => blog.id !== id)
+        setBlogs([newBlogs])
     }
 
     // let name = 'mario'
@@ -29,8 +30,8 @@ export default function Home() {
 
     return (
         <div className="home">
-            <Bloglist blogs={blogs} title='All Blogs'/>
-            <Bloglist blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/>
+            <Bloglist blogs={blogs} title='All Blogs' handleDelete={handleDelete} />
+            {/* <Bloglist blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/> */}
             {/* <h2>Home Page</h2>
             <p> { name } is { age } years old</p>
             <button onClick={handleClick}>Click me</button>

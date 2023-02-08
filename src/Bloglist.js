@@ -1,6 +1,6 @@
 import react from 'react'
 
-export default function Bloglist({blogs, title}) {
+export default function Bloglist({blogs, title, handleDelete}) {
     // const blogs = props.blogs;
     // const title = props.title;
     return (
