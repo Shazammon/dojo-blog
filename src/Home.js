@@ -25,7 +25,8 @@ export default function Home() {
 
     return (
         <div className="home">
-            <Bloglist blogs={blogs} />
+            <Bloglist blogs={blogs} title='All Blogs'/>
+            <Bloglist blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/>
             {/* <h2>Home Page</h2>
             <p> { name } is { age } years old</p>
             <button onClick={handleClick}>Click me</button>
