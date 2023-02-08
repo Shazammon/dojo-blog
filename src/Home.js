@@ -2,12 +2,14 @@ import react from 'react';
 
 export default function Home() {
 
+    let name = 'mario'
+
     const handleClick = (e) => {
         console.log('Hello ninjas', e)
     }
 
-    const handleClickAgain = (name) => {
-        console.log('hello' + name)
+    const handleClickAgain = (name, e) => {
+        console.log('hello' + name, e.target)
     }
 
     return (
