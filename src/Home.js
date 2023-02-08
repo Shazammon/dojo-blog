@@ -9,6 +9,10 @@ export default function Home() {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ])
 
+    const handleDelete = (id) => {
+        setBlogs([...prevBlogs])
+    }
+
     // let name = 'mario'
     // const [ name, setName ] = useState('mario')
     // const [ age, setAge ] = useState(25)
