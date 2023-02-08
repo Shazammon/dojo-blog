@@ -1,4 +1,5 @@
 import react from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Bloglist({blogs, title }) {
     // const blogs = props.blogs;
@@ -7,10 +8,13 @@ export default function Bloglist({blogs, title }) {
         <>
         <h1>{title}</h1>
             {blogs.map((blog) => (
+
                 <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>Written by: {blog.author} </p>
-                    {/* <button onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
+                    <Link to={`/blogs/${blog.id}`}>
+                        <h2>{blog.title}</h2>
+                        <p>Written by: {blog.author} </p>
+                        {/* <button onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
+                    </Link>
                 </div>
             ))}
         </>
