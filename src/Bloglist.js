@@ -1,6 +1,7 @@
 import react from 'react'
 
-export default function Bloglist({blogs}) {
+export default function Bloglist(props) {
+    const blogs = props.blogs
     return (
         <>
             {blogs.map((blog) => (
