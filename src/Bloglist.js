@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Bloglist({blogs, title }) {
     // const blogs = props.blogs;
     // const title = props.title;
+
     return (
         <>
         <h1>{title}</h1>
@@ -15,6 +16,7 @@ export default function Bloglist({blogs, title }) {
                         <p>Written by: {blog.author} </p>
                         {/* <button onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
                     </Link>
+
                 </div>
             ))}
         </>

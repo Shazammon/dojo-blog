@@ -17,6 +17,18 @@
       "body": "hi",
       "author": "mario",
       "id": 3
+    },
+    {
+      "title": "hello",
+      "body": "what's up",
+      "author": "yoshi",
+      "id": 5
+    },
+    {
+      "title": "Blog title",
+      "body": "This is my post",
+      "author": "yoshi",
+      "id": 7
     }
   ]
 }
